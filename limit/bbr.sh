@@ -1,6 +1,6 @@
 #!/bin/bash
 # Edition : Stable Edition V3.0
-# Auther  : Geo Project
+# Auther  : RanTempest
 # (C) Copyright 2023
 # =========================================
 
@@ -18,7 +18,7 @@ clear
 #	 menu
 #else
 
-echo -e "Installing TCP BBR Mod By REV VPN STORE"
+echo -e "Installing TCP BBR Mod By RanTempest STORE"
 echo -e "Please Wait BBR Installation Will Starting . . ."
 sleep 5
 clear
