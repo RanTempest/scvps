@@ -6,7 +6,7 @@ DOMAIN=ranstore.cloud
 sub=$(</dev/urandom tr -dc a-z0-9 | head -c5)
 dns=${sub}.ranstore.cloud
 CF_ID=rantempest2@gmail.com
-CF_KEY=dbbf60ed9a129d4443553e0d74b3d27d
+CF_KEY=b67aeb4e8f49974bba4c4a48959b9dc3f4535
 set -euo pipefail
 IP=$(wget -qO- icanhazip.com);
 echo "Updating DNS for ${dns}..."
