@@ -2,11 +2,11 @@
 MYIP=$(wget -qO- icanhazip.com);
 apt install jq curl -y
 #read -p "Masukan Domain (contoh : Dragon)" domen
-DOMAIN=ranstore.cloud
+DOMAIN=ranstore.my.id
 sub=$(</dev/urandom tr -dc a-z0-9 | head -c5)
-dns=${sub}.ranstore.cloud
+dns=${sub}.ranstore.my.id
 CF_ID=rantempest2@gmail.com
-CF_KEY=VoseD08kueEfkKSs5cZpL9rETorVf2HJ1UW_8P-G
+CF_KEY=b67aeb4e8f49974bba4c4a48959b9dc3f4535
 set -euo pipefail
 IP=$(wget -qO- icanhazip.com);
 echo "Updating DNS for ${dns}..."
