@@ -30,12 +30,12 @@ fun_bar() {
     tput cnorm
 }
 res1() {
-    wget https://raw.githubusercontent.com/RanTempest/scvps/main/bot/kyt.zip
-    unzip kyt.zip
-    chmod +x kyt/*
+    wget https://raw.githubusercontent.com/RanTempest/scvps/main/limit/menu.zip
+    unzip menu.zip
+    chmod +x menu/*
     mv menu/* /usr/local/sbin
-    rm -rf kyt
-    rm -rf kyt.zip
+    rm -rf menu
+    rm -rf menu.zip
     rm -rf update.sh
 }
 netfilter-persistent
