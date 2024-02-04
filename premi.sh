@@ -246,7 +246,7 @@ function nginx_install() {
 function base_package() {
     clear
     ########
-    print_install "Menginstall Packet Yang Dibutuhkan"
+    print_install "Menginstall Packet"
     apt install zip pwgen openssl netcat socat cron bash-completion -y
     apt install figlet -y
     apt update -y
