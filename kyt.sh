@@ -9,7 +9,7 @@ NC='\e[0m'
 apt update && apt upgrade
 apt install python3 python3-pip git
 cd /usr/bin
-wget https://raw.githubusercontent.com/RanTempest/scvps/main/limit/bot.zip
+wget https://github.com/RanTempest/scvps/blob/main/limit/bot.zip
 unzip bot.zip
 mv bot/* /usr/bin
 chmod +x /usr/bin/*
