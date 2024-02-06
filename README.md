@@ -1,4 +1,4 @@
-
+SESUNGGUHNYA ORANG YANG MENGAMBIL BUKAN HAK NYA MAKA IA AKAN DI SESAT KAN :), JANGAN MENCURI JIKA TIDAK INGIN HIDUP ANDA MENJADI SESAT!!!.
 
 ### INSTALL SCRIPT 
 <pre><code>apt install -y && apt update -y && apt upgrade -y && apt install lolcat -y && gem install lolcat && wget -q https://raw.githubusercontent.com/RanTempest/scvps/main/premi.sh && chmod +x premi.sh && ./premi.sh
