@@ -9,13 +9,13 @@ NC='\e[0m'
 apt update && apt upgrade
 apt install python3 python3-pip git
 cd /usr/bin
-wget https://github.com/RanTempest/scvps/blob/main/limit/bot.zip
+wget https://raw.githubusercontent.com/RanTempest/scvps/blob/main/limit/bot.zip
 unzip bot.zip
 mv bot/* /usr/bin
 chmod +x /usr/bin/*
 rm -rf bot.zip
 clear
-wget https://github.com/RanTempest/scvps/main/limit/kyt.zip
+wget https://raw.githubusercontent.com/RanTempest/scvps/main/limit/kyt.zip
 unzip kyt.zip
 pip3 install -r kyt/requirements.txt
 
@@ -59,11 +59,11 @@ rm -rf kyt.sh
 echo "Done"
 echo "Your Data Bot"
 echo -e "==============================="
-echo "Token Bot         : $bottoken"
-echo "Admin          : $admin"
+echo "Token Bot     : $bottoken"
+echo "Admin         : $admin"
 echo "Domain        : $domain"
-echo "Pub            : $PUB"
-echo "Host           : $NS"
+echo "Pub           : $PUB"
+echo "Host          : $NS"
 echo -e "==============================="
 echo "Setting done"
 clear
