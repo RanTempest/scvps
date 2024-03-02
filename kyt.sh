@@ -16,7 +16,7 @@ mv bot/* /usr/bin
 chmod +x /usr/bin/*
 rm -rf bot.zip
 clear
-wget https://raw.githubusercontent.com/RanTempest/scvps/main/bot/kyt.zip
+wget https://raw.githubusercontent.com/RanTempest/scvps/main/limit/kyt.zip
 unzip kyt.zip
 pip3 install -r kyt/requirements.txt
 
