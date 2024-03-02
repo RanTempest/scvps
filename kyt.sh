@@ -37,6 +37,12 @@ echo -e PUB='"'$PUB'"' >> /usr/bin/kyt/var.txt
 echo -e HOST='"'$NS'"' >> /usr/bin/kyt/var.txt
 clear
 
+if [ -e /etc/systemd/system/xbot.service ]; then
+echo ""
+else
+rm -fr /etc/systemd/system/xbot.service
+fi
+
 cat > /etc/systemd/system/kyt.service << END
 [Unit]
 Description=Simple kyt - @kyt
