@@ -41,10 +41,10 @@ echo -e PUB='"'$PUB'"' >> /usr/bin/kyt/var.txt
 echo -e HOST='"'$NS'"' >> /usr/bin/kyt/var.txt
 clear
 
-if [ -e /etc/systemd/system/xbot.service ]; then
+if [ -e /etc/systemd/system/bot.service ]; then
 echo ""
 else
-rm -fr /etc/systemd/system/xbot.service
+rm -fr /etc/systemd/system/bot.service
 fi
 
 cat > /etc/systemd/system/kyt.service << END
@@ -61,13 +61,14 @@ Restart=always
 WantedBy=multi-user.target
 END
 
+systemctl daemon-reload
 systemctl start kyt 
 systemctl enable kyt
 systemctl restart kyt
 cd 
 
 # // STATUS SERVICE BOT
-bot_service=$(systemctl status xbot | grep active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
+bot_service=$(systemctl status bot | grep active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 if [[ $bot_service == "running" ]]; then 
    sts_bot="${g}[ON]${NC}"
 else
