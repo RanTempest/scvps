@@ -41,10 +41,10 @@ echo -e PUB='"'$PUB'"' >> /usr/bin/kyt/var.txt
 echo -e HOST='"'$NS'"' >> /usr/bin/kyt/var.txt
 clear
 
-if [ -e /etc/systemd/system/bot.service ]; then
+if [ -e /etc/systemd/system/kyt.service ]; then
 echo ""
 else
-rm -fr /etc/systemd/system/bot.service
+rm -fr /etc/systemd/system/kyt.service
 fi
 
 cat > /etc/systemd/system/kyt.service << END
