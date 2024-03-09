@@ -7,7 +7,7 @@ clear
 
 echo -e ""
 read -p "Input IP Address : " ip
-CLIENT_EXISTS=$(grep -w $ip /root/scvps/izinIp | wc -l)
+CLIENT_EXISTS=$(grep -w $ip /root/scvps/izinIP | wc -l)
 
 if [[ ${CLIENT_EXISTS} == '1' ]]; then
     echo "IP Already Exist !"
@@ -48,9 +48,9 @@ case $exp_option in
 esac
 
 exp2=`date -d "${exp} days" +"%Y-%m-%d"`
-echo "### ${name} ${exp2} ${ip}" >> /root/scvps/izinIp
+echo "### ${name} ${exp2} ${ip}" >> /root/scvps/izinIP
 
-cd /root/andy
+cd /root/RanTempest
 git config --global user.email "rantempest2@gmail.com" &> /dev/null
 git config --global user.name "TEMPEST" &> /dev/null
 rm -rf .git &> /dev/null
