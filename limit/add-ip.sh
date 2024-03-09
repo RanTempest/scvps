@@ -8,7 +8,7 @@ biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 ipsaya=$(curl -sS ipv4.icanhazip.com)
 data_server=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 date_list=$(date +"%Y-%m-%d" -d "$data_server")
-data_ip="https://raw.githubusercontent.com/RanTempest/scvps/main/izin"
+data_ip="https://raw.githubusercontent.com/RanTempest/scvps/main/izinIP"
 checking_sc() {
   useexp=$(wget -qO- $data_ip | grep $ipsaya | awk '{print $3}')
   if [[ $date_list < $useexp ]]; then
@@ -77,7 +77,7 @@ URL="https://api.telegram.org/bot$KEY/sendMessage"
     echo -e ""
     echo -e ""
     read -p "  Input IP Address : " ip
-    CLIENT_EXISTS=$(grep -w $ip /root/scvps/izinIp | wc -l)
+    CLIENT_EXISTS=$(grep -w $ip /root/scvps/izinIP | wc -l)
     if [[ ${CLIENT_EXISTS} == '1' ]]; then
     echo "IP Already Exist !"
     exit 0
@@ -100,20 +100,20 @@ URL="https://api.telegram.org/bot$KEY/sendMessage"
 
     if [[ ${exp} == '1' ]]; then
     exp2=`date -d "30 days" +"%Y-%m-%d"`
-    echo "### ${name} ${exp2} ${ip}" >> /root/scvps/izinIp
+    echo "### ${name} ${exp2} ${ip}" >> /root/scvps/izinIP
     elif [[ ${exp} == '2' ]]; then
     exp2=`date -d "60 days" +"%Y-%m-%d"`
-    echo "### ${name} ${exp2} ${ip}" >> /root/scvps/izinIp
+    echo "### ${name} ${exp2} ${ip}" >> /root/scvps/izinIP
     elif [[ ${exp} == '3' ]]; then
     exp2=`date -d "90 days" +"%Y-%m-%d"`
-    echo "### ${name} ${exp2} ${ip}" >> /root/scvps/izinIp
+    echo "### ${name} ${exp2} ${ip}" >> /root/scvps/izinIP
     elif [[ ${exp} == '4' ]]; then
     exp2="Lifetime"
-    echo "### ${name} ${exp2} ${ip}" >> /root/scvps/izinIp
+    echo "### ${name} ${exp2} ${ip}" >> /root/scvps/izinIP
     elif [[ ${exp} == '5' ]]; then
     read -p "Input Expired Days : " exp11
     exp2=`date -d "$exp11 days" +"%Y-%m-%d"`
-    echo "### ${name} ${exp2} ${ip}" >> /root/scvps/izinIp
+    echo "### ${name} ${exp2} ${ip}" >> /root/scvps/izinIP
     fi
     cd /root/scvps
     git config --global user.email "${EMAIL}" &> /dev/null
@@ -183,12 +183,12 @@ URL="https://api.telegram.org/bot$KEY/sendMessage"
     echo -e "${BlueCyan} ———————————————————————————————————————${Xark}"
 
     read -p "   Input IP Address To Delete : " ipdel
-    name=$(cat /root/scvps/izinIp | grep $ipdel | awk '{print $2}')
-    exp=$(cat /root/scvps/izinIp | grep $ipdel | awk '{print $3}')
+    name=$(cat /root/scvps/izinIP | grep $ipdel | awk '{print $2}')
+    exp=$(cat /root/scvps/izinIP | grep $ipdel | awk '{print $3}')
     if [[ ${exp} == 'Lifetime' ]]; then
-    sed -i "/^#&   $name   $exp $ipdel/,/^},{/d" /root/scvps/izinIp
+    sed -i "/^#&   $name   $exp $ipdel/,/^},{/d" /root/scvps/izinIP
     else
-    sed -i "/^### $name $exp $ipdel/,/^},{/d" /root/scvps/izinIp
+    sed -i "/^### $name $exp $ipdel/,/^},{/d" /root/scvps/izinIP
     fi
     cd /root/scvps
     git config --global user.email "${EMAIL}" &> /dev/null
@@ -253,15 +253,15 @@ URL="https://api.telegram.org/bot$KEY/sendMessage"
     echo ""
     read -p "  Input IP Address To Renew : " ipdel
     read -p "  Input Days  : " days
-    name=$(cat /root/ipvps/ip | grep $ipdel | awk '{print $2}')
-    exp=$(cat /root/ipvps/ip | grep $ipdel | awk '{print $3}')
+    name=$(cat /root/ipvps/iP | grep $ipdel | awk '{print $2}')
+    exp=$(cat /root/ipvps/iP | grep $ipdel | awk '{print $3}')
     now=$(date +%Y-%m-%d)
     d1=$(date -d "$exp" +%s)
     d2=$(date -d "$now" +%s)
     exp2=$(( (d1 - d2) / 86400 ))
     exp3=$(($exp2 + $days))
     exp4=`date -d "$exp3 days" +"%Y-%m-%d"`
-    sed -i "s/### $name $exp $ipdel/### $name $exp4 $ipdel/g" /root/scvps/izinIp
+    sed -i "s/### $name $exp $ipdel/### $name $exp4 $ipdel/g" /root/scvps/izinIP
     cd /root/scvps
     git config --global user.email "${EMAIL}" &> /dev/null
     git config --global user.name "${USER}" &> /dev/null
