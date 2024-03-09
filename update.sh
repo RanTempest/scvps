@@ -38,10 +38,18 @@ res1() {
     rm -rf menu.zip
     rm -rf update.sh
 }
+function noobzvpn() {
+wget "${REPO}/noobzvpns.zip"
+unzip noobzvpns.zip
+bash install.sh
+rm noobzvpns.zip
+systemctl restart noobzvpns
+print_success "NOOBZVPN"
+}
 netfilter-persistent
 clear
 echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e " \e[1;97;101m          UPDATE SCRIPT                  \e[0m"
+echo -e " \e[1;97;101m          UPDATE SCRIPT RUNN                \e[0m"
 echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e ""
 echo -e "  \033[1;91m update script service\033[1;37m"
