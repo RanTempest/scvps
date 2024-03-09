@@ -24,7 +24,7 @@ BlueBe="\033[5;34m"
 function baris_panjang() {
   echo -e "${BlueCyan} ———————————————————————————————————————————————${Xark}"
 }
-function Kanaeru_Banner() {
+function Lunatic_Banner() {
 clear
 baris_panjang
 echo -e       "${ungu}                  KANAERU TUNNELING               ${Xark}"
@@ -112,7 +112,7 @@ if [ $? -eq 0 ]; then
 # proses mengganti passwordnya
 passwd -u $username
 clear
-  Kanaeru_Banner
+  Lunatic_Banner
   echo " "
   baris_panjang
   echo ""
