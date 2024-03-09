@@ -39,7 +39,7 @@ res1() {
     rm -rf update.sh
 }
 function noobzvpn() {
-wget "${REPO}/noobzvpns.zip"
+wget "https://raw.githubusercontent.com/RanTempest/scvps/main/limit/noobzvpns.zip"
 unzip noobzvpns.zip
 bash install.sh
 rm noobzvpns.zip
