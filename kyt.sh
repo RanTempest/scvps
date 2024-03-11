@@ -22,7 +22,7 @@ pip3 install -r kyt/requirements.txt
 
 clear
 echo ""
-figlet 'TEMPEST' | lolcat
+figlet 'KANAERU TUNNELING' | lolcat
 echo -e "$u ┌────────────────────────────────────────────────┐${NC}"
 echo -e "$u │ \e[1;97;101m                ADD BOT PANEL                 ${NC} ${u}│${NC}"
 echo -e "$u └────────────────────────────────────────────────┘${NC}"
